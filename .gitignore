@@ -12,6 +12,8 @@
 /screenshots/*
 !/screenshots/vscode.png
 !/screenshots/vscode-editor.png
+!/screenshots/intellij.png
+!/screenshots/intellij-editor.png
 
 # Bootstrap
 !/bootstrap/

@@ -31,6 +31,10 @@ scratch.
 
 ![Closer look at the editor colors, typography, minimap, and background](screenshots/vscode-editor.png)
 
+![IntelliJ IDEA with the Tokyo Dark theme and a wallpaper behind the editor](screenshots/intellij.png)
+
+![Closer look at the IntelliJ editor colors, inline blame, and background](screenshots/intellij-editor.png)
+
 ## What's included?
 
 - A tidy Zsh setup with completions, aliases, and small quality-of-life helpers
