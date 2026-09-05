@@ -7,6 +7,12 @@
 !/README.md
 !/Brewfile
 
+# README screenshots (explicit allowlist; do not commit arbitrary captures)
+!/screenshots/
+/screenshots/*
+!/screenshots/vscode.png
+!/screenshots/vscode-editor.png
+
 # Bootstrap
 !/bootstrap/
 /bootstrap/*

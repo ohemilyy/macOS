@@ -9,6 +9,12 @@ themselves at home. You get a nice shell, a useful DevOps toolkit, sensible Git
 defaults, and a customized VS Code setup without assembling everything from
 scratch.
 
+## A quick peek
+
+![Full VS Code setup with the Catppuccin theme and custom background](screenshots/vscode.png)
+
+![Closer look at the editor colors, typography, minimap, and background](screenshots/vscode-editor.png)
+
 ## What's included?
 
 - A tidy Zsh setup with completions, aliases, and small quality-of-life helpers
