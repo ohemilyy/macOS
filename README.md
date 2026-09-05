@@ -1,40 +1,106 @@
-# macOS workstation
+# DevOps-flavored macOS dotfiles
 
-Reproducible, credential-free configuration for an infrastructure engineering
-Mac. The repository intentionally excludes SSH keys, host inventories,
-kubeconfigs, cloud credentials, tokens, and Tailscale state.
+A ready-to-go macOS setup for people who spend too much time in terminals,
+YAML files, Kubernetes clusters, and VS Code.
 
-## Install
+These are my personal dotfiles, but they are intentionally kept portable and
+free of credentials so anyone can clone them, tweak a few things, and make
+themselves at home. You get a nice shell, a useful DevOps toolkit, sensible Git
+defaults, and a customized VS Code setup without assembling everything from
+scratch.
 
-1. Install Homebrew and the current Xcode Command Line Tools.
-2. Review `Brewfile` and `bootstrap/macos.sh`.
-3. Run `./bootstrap/macos.sh`.
-4. Put personal Git identity in `~/.gitconfig.local`.
-5. Authenticate `gh`, `az`, `aws`, `bw`, and PowerShell modules interactively as needed.
+## What's included?
 
-The bootstrap installs a user-local Python 3.13 through `uv`. It pins Node 22
-because the current Bitwarden CLI declares that engine requirement. pnpm,
-Bitwarden CLI, and mongosh are installed into that fnm-managed runtime to avoid
-forcing a second Homebrew Node source build on Intel macOS.
+- A tidy Zsh setup with completions, aliases, and small quality-of-life helpers
+- Ghostty, Starship, tmux, zoxide, fzf, bat, eza, ripgrep, and other terminal goodies
+- Docker and Colima
+- kubectl, Helm, k9s, kubectx, Stern, and kind
+- OpenTofu, Terraform, Ansible, pre-commit, ShellCheck, and shfmt
+- AWS, Azure, PowerShell, Go, Rust, Java, Python via `uv`, and Node via `fnm`
+- Handy networking, security, and database tools
+- VS Code settings, a big extension pack, Catppuccin styling, and a custom wallpaper
 
-OpenTofu is the default behind the `tf` alias. Terraform remains installed and
-explicit for existing repositories. No apply, destroy, force-push, pod-delete,
-or remote infrastructure aliases are included.
+Nothing here automatically applies infrastructure, deletes clusters, force
+pushes branches, or does other exciting career-limiting things.
 
-## Layout
+## Quick start
 
-- `shell/`: minimal zsh entry points
-- `zsh/`: modular environment, completion, aliases, functions, integrations
-- `ghostty/`: readable lunar terminal theme and practical key bindings
-- `starship/`: compact prompt with conspicuous production Kubernetes contexts
-- `tmux/`: small, plugin-free configuration for persistent sessions
-- `git/`: safe global defaults; identity stays in `~/.gitconfig.local`
-- `ssh/`: non-secret macOS client defaults only
-- `vscode/`: settings, extension manifest, custom wallpaper, and restore script
-- `bootstrap/`: repeatable linking and package installation
+You will need macOS, an internet connection, and an administrator account.
+Install Apple's command-line tools first:
 
-## VS Code only
+```bash
+xcode-select --install
+```
 
-To restore just the editor profile on a machine where VS Code is already
-installed, run `./vscode/install.sh`. This installs the extension manifest,
-copies the portable settings file, and installs the custom background image.
+Then install [Homebrew](https://brew.sh), clone this repo, and run the bootstrap:
+
+```bash
+git clone https://github.com/ohemilyy/macOS.git ~/dotfiles
+cd ~/dotfiles
+./bootstrap/macos.sh
+```
+
+The script installs the packages in the `Brewfile`, links the dotfiles into
+your home folder, sets up the language runtimes, and restores the VS Code
+profile. It is fine to run it again later when you want to catch up with changes.
+
+> [!TIP]
+> Have a look through `Brewfile` and `bootstrap/macos.sh` before running them.
+> Fork the repo and remove anything you do not want—dotfiles should feel like
+> yours, not like a mysterious appliance.
+
+## Just want the VS Code setup?
+
+If VS Code is already installed, you can restore only the editor settings,
+extensions, and wallpaper:
+
+```bash
+git clone https://github.com/ohemilyy/macOS.git ~/dotfiles
+cd ~/dotfiles
+./vscode/install.sh
+```
+
+The custom background extension may ask for administrator access the first time
+it patches VS Code. After installation, run **Developer: Reload Window** from
+the Command Palette if the wallpaper does not appear right away.
+
+## A couple of personal bits you still need to add
+
+Secrets and machine-specific data do not belong in this repo. You will still
+need to:
+
+- Put your Git name and email in `~/.gitconfig.local`
+- Sign in to tools such as `gh`, `aws`, `az`, and `bw`
+- Add your own SSH keys, host aliases, kubeconfigs, cloud credentials, and Tailscale login
+
+For example:
+
+```gitconfig
+[user]
+    name = Your Name
+    email = you@example.com
+```
+
+## What's where?
+
+```text
+bootstrap/   the main macOS setup script
+git/         safe Git defaults (no personal identity)
+ghostty/     terminal theme and key bindings
+shell/       small .zshrc and .zprofile entry points
+ssh/         non-secret macOS SSH client defaults
+starship/    prompt configuration
+tmux/        lightweight tmux configuration
+vscode/      editor settings, extensions, wallpaper, and installer
+zsh/         aliases, functions, completions, and integrations
+```
+
+## Notes for fellow tinkerers
+
+- Python 3.13 is installed through `uv`.
+- Node 22 is managed by `fnm`; it is pinned for compatibility with the included CLIs.
+- The `tf` alias uses OpenTofu. Terraform is also installed for projects that need it.
+- Database packages are clients only and are not started as background services.
+- The prompt makes production Kubernetes contexts intentionally hard to miss.
+
+Steal what you like, delete what you do not, and make something cozy. ✨
