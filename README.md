@@ -38,7 +38,8 @@ Install Apple's command-line tools first:
 xcode-select --install
 ```
 
-Then install [Homebrew](https://brew.sh), clone this repo, and run the bootstrap:
+Then install [Homebrew](https://brew.sh), clone this repo, and start the guided
+setup:
 
 ```bash
 git clone https://github.com/ohemilyy/macOS.git ~/dotfiles
@@ -46,9 +47,24 @@ cd ~/dotfiles
 ./bootstrap/macos.sh
 ```
 
-The script installs the packages in the `Brewfile`, links the dotfiles into
-your home folder, sets up the language runtimes, and restores the VS Code
-profile. It is fine to run it again later when you want to catch up with changes.
+The installer asks what you actually want. Docker, Kubernetes, infrastructure
+tools, language runtimes, cloud CLIs, databases, networking tools, and the VS
+Code profile can all be selected separately. AWS and Azure are off by default.
+It can also set your Git name and email without adding them to this repository.
+
+Existing config files are moved into a timestamped backup folder before the
+dotfile links are created. It is fine to run the installer again later.
+
+Prefer fewer questions? There are a few shortcuts:
+
+```bash
+./bootstrap/macos.sh --yes      # recommended defaults
+./bootstrap/macos.sh --minimal  # shell, Git, and core CLI tools
+./bootstrap/macos.sh --all      # the whole toolbox
+```
+
+The root `Brewfile` remains available if you prefer a traditional full
+`brew bundle` install.
 
 > [!TIP]
 > Have a look through `Brewfile` and `bootstrap/macos.sh` before running them.
@@ -76,7 +92,7 @@ Secrets and machine-specific data do not belong in this repo. You will still
 need to:
 
 - Put your Git name and email in `~/.gitconfig.local`
-- Sign in to tools such as `gh`, `aws`, `az`, and `bw`
+- Sign in to tools such as `gh`, `aws`, and `az` if you chose to install them
 - Add your own SSH keys, host aliases, kubeconfigs, cloud credentials, and Tailscale login
 
 For example:
