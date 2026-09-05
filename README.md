@@ -1,4 +1,4 @@
-# Lunar Ops macOS workstation
+# macOS workstation
 
 Reproducible, credential-free configuration for an infrastructure engineering
 Mac. The repository intentionally excludes SSH keys, host inventories,
