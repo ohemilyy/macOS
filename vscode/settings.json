@@ -69,6 +69,7 @@
     "editor.codeActionsOnSave": {},
     "github.copilot.editor.enableAutoCompletions": true,
     "background.useInvertedOpacity": false,
+    "background.autoInstall": true,
 
     "vscord.status.image.large.debugging.key": "https://vscord.catppuccin.com/mocha/debugging.webp",
     "vscord.status.image.large.editing.key": "https://vscord.catppuccin.com/mocha/{lang}.webp",
