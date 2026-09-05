@@ -42,6 +42,13 @@
 /tmux/*
 !/tmux/tmux.conf
 
+!/vscode/
+/vscode/*
+!/vscode/settings.json
+!/vscode/extensions.txt
+!/vscode/install.sh
+!/vscode/catppuccin-aurora.png
+
 # Git defaults only. Personal identity belongs in ~/.gitconfig.local.
 !/git/
 /git/*

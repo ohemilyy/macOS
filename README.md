@@ -30,4 +30,11 @@ or remote infrastructure aliases are included.
 - `tmux/`: small, plugin-free configuration for persistent sessions
 - `git/`: safe global defaults; identity stays in `~/.gitconfig.local`
 - `ssh/`: non-secret macOS client defaults only
+- `vscode/`: settings, extension manifest, custom wallpaper, and restore script
 - `bootstrap/`: repeatable linking and package installation
+
+## VS Code only
+
+To restore just the editor profile on a machine where VS Code is already
+installed, run `./vscode/install.sh`. This installs the extension manifest,
+copies the portable settings file, and installs the custom background image.

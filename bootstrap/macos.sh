@@ -22,6 +22,7 @@ ln -sfn "$repo_dir/ssh/00-workstation.conf" "$HOME/.ssh/config.d/00-workstation.
 brew tap hashicorp/tap
 brew trust --formula hashicorp/tap/terraform
 brew bundle --file "$repo_dir/Brewfile"
+"$repo_dir/vscode/install.sh"
 git lfs install --skip-repo
 uv python install 3.13 --default
 
@@ -37,5 +38,5 @@ npm install --global pnpm@10.34.5 @bitwarden/cli@2026.8.0 mongosh@2.10.0
 export PATH="/usr/local/opt/rustup/bin:$PATH"
 rustup default stable
 
-print 'Workstation packages and dotfile links are installed.'
+print 'Workstation packages, dotfile links, and VS Code profile are installed.'
 print 'Put Git identity in ~/.gitconfig.local; never commit credentials.'
