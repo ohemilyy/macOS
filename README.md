@@ -103,4 +103,9 @@ zsh/         aliases, functions, completions, and integrations
 - Database packages are clients only and are not started as background services.
 - The prompt makes production Kubernetes contexts intentionally hard to miss.
 
+## Credits
+
+The VS Code settings are based on the setup by
+[AndyReckt](https://github.com/andyreckt). Thanks for sharing it! 💜
+
 Steal what you like, delete what you do not, and make something cozy. ✨
