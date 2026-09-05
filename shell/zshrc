@@ -1,0 +1,3 @@
+# Professional workstation shell configuration.
+# Keep this file small; modules live under ~/.config/zsh.
+[[ -r "$HOME/.config/zsh/init.zsh" ]] && source "$HOME/.config/zsh/init.zsh"

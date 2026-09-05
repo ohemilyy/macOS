@@ -1,0 +1,126 @@
+format = "$directory$git_branch$git_status$kubernetes$docker_context$terraform$nodejs$python$golang$rust$java$aws$azure$line_break$character"
+right_format = "$cmd_duration$status$time"
+add_newline = false
+command_timeout = 800
+palette = "lunar"
+
+[palettes.lunar]
+night = "#0b1020"
+moon = "#c8d3f5"
+blue = "#82aaff"
+violet = "#c099ff"
+cyan = "#86e1fc"
+green = "#c3e88d"
+yellow = "#ffc777"
+red = "#ff757f"
+muted = "#636da6"
+
+[directory]
+style = "bold blue"
+truncation_length = 4
+truncate_to_repo = true
+read_only = " "
+format = "[  $path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = " "
+style = "bold violet"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "yellow"
+format = "([$all_status$ahead_behind]($style) )"
+conflicted = "!${count}"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "*${count}"
+modified = "~${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[kubernetes]
+disabled = false
+symbol = "󱃾 "
+style = "bold cyan"
+format = "[$symbol$context(::$namespace)]($style) "
+
+[[kubernetes.contexts]]
+context_pattern = ".*([Pp][Rr][Oo][Dd]|[Pp][Rr][Dd]|[Pp][Rr][Oo][Dd][Uu][Cc][Tt][Ii][Oo][Nn]).*"
+style = "bold red"
+symbol = "☢ "
+
+[[kubernetes.contexts]]
+context_pattern = ".*([Ll][Oo][Cc][Aa][Ll]|[Kk][Ii][Nn][Dd]|[Kk]3[Dd]|[Mm][Ii][Nn][Ii][Kk][Uu][Bb][Ee]|[Dd][Ee][Vv]|[Tt][Ee][Ss][Tt]).*"
+style = "bold green"
+symbol = "󱃾 "
+
+[docker_context]
+symbol = " "
+style = "blue"
+format = "[$symbol$context]($style) "
+only_with_files = true
+
+[terraform]
+symbol = "󱁢 "
+style = "violet"
+format = "[$symbol$workspace]($style) "
+
+[nodejs]
+symbol = " "
+format = "[$symbol$version]($style) "
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+
+[python]
+symbol = " "
+format = "[${symbol}${pyenv_prefix}(${version})(\\($virtualenv\\))]($style) "
+detect_extensions = []
+detect_files = ["pyproject.toml", "requirements.txt", ".python-version", "uv.lock"]
+
+[golang]
+symbol = " "
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = " "
+format = "[$symbol$version]($style) "
+
+[java]
+symbol = " "
+format = "[$symbol$version]($style) "
+
+[aws]
+symbol = "  "
+style = "yellow"
+format = "[$symbol$profile(::$region)]($style) "
+
+[azure]
+disabled = false
+symbol = "󰠅 "
+style = "blue"
+format = "[$symbol$subscription]($style) "
+
+[cmd_duration]
+min_time = 1500
+style = "muted"
+format = "[took $duration]($style) "
+
+[status]
+disabled = false
+symbol = "✘"
+success_symbol = ""
+style = "bold red"
+format = "[$symbol $status]($style) "
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "muted"
+format = "[$time]($style)"
+
+[character]
+success_symbol = "[❯](bold violet)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"

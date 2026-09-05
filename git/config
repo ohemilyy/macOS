@@ -1,0 +1,17 @@
+[init]
+	defaultBranch = main
+[fetch]
+	prune = true
+[pull]
+	ff = only
+[push]
+	default = simple
+	autoSetupRemote = true
+[rebase]
+	autoStash = true
+[diff]
+	colorMoved = zebra
+[merge]
+	conflictStyle = zdiff3
+[include]
+	path = ~/.gitconfig.local

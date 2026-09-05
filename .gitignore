@@ -1,0 +1,53 @@
+# Strict allowlist: ignore every root entry unless explicitly approved below.
+# When adding a new dotfile, review it for credentials before adding an exception.
+/*
+
+# Repository metadata and documentation
+!/.gitignore
+!/README.md
+!/Brewfile
+
+# Bootstrap
+!/bootstrap/
+/bootstrap/*
+!/bootstrap/macos.sh
+
+# Shell entry points
+!/shell/
+/shell/*
+!/shell/zprofile
+!/shell/zshrc
+
+# Modular zsh configuration
+!/zsh/
+/zsh/*
+!/zsh/aliases.zsh
+!/zsh/completion.zsh
+!/zsh/devops.zsh
+!/zsh/environment.zsh
+!/zsh/functions.zsh
+!/zsh/init.zsh
+!/zsh/tools.zsh
+
+# Application configuration
+!/ghostty/
+/ghostty/*
+!/ghostty/config
+
+!/starship/
+/starship/*
+!/starship/starship.toml
+
+!/tmux/
+/tmux/*
+!/tmux/tmux.conf
+
+# Git defaults only. Personal identity belongs in ~/.gitconfig.local.
+!/git/
+/git/*
+!/git/config
+
+# SSH client defaults only. Never allow keys, hosts, or inventories here.
+!/ssh/
+/ssh/*
+!/ssh/00-workstation.conf

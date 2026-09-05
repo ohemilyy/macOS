@@ -1,0 +1,57 @@
+# Lunar Ops: restrained contrast, subtle transparency, practical behavior.
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 14
+font-thicken = true
+
+background = 0b1020
+foreground = c8d3f5
+cursor-color = c099ff
+cursor-text = 0b1020
+selection-background = 2d3f76
+selection-foreground = ffffff
+palette = 0=#1b1d2b
+palette = 1=#ff757f
+palette = 2=#c3e88d
+palette = 3=#ffc777
+palette = 4=#82aaff
+palette = 5=#c099ff
+palette = 6=#86e1fc
+palette = 7=#c8d3f5
+palette = 8=#636da6
+palette = 9=#ff757f
+palette = 10=#c3e88d
+palette = 11=#ffc777
+palette = 12=#82aaff
+palette = 13=#c099ff
+palette = 14=#86e1fc
+palette = 15=#ffffff
+
+background-opacity = 0.96
+background-blur-radius = 18
+window-padding-x = 12
+window-padding-y = 10
+window-padding-balance = true
+window-save-state = always
+window-theme = dark
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+
+cursor-style = bar
+cursor-style-blink = true
+mouse-hide-while-typing = true
+scrollback-limit = 10000000
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title
+copy-on-select = clipboard
+clipboard-read = allow
+clipboard-write = allow
+confirm-close-surface = true
+unfocused-split-opacity = 0.88
+
+keybind = super+t=new_tab
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
+keybind = super+shift+left_bracket=previous_tab
+keybind = super+shift+right_bracket=next_tab
+keybind = super+shift+r=reload_config
+keybind = super+shift+enter=new_window
