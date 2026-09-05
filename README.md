@@ -1,4 +1,20 @@
-# DevOps-flavored macOS dotfiles
+# Neptune
+
+```text
+                 _..._
+             .-'     '-.
+          .-'  .-"""-.  '-.
+        .'    /       \\    '.
+       /     |  ~ ~ ~  |     \\
+      |       \\       /       |
+       \\       '.___.'       /
+        '.                 .'
+          '-.           .-'
+             '---------'
+              N E P T U N E
+```
+
+## DevOps-flavored macOS dotfiles
 
 A ready-to-go macOS setup for people who spend too much time in terminals,
 YAML files, Kubernetes clusters, and VS Code.
@@ -42,7 +58,7 @@ Then install [Homebrew](https://brew.sh), clone this repo, and start the guided
 setup:
 
 ```bash
-git clone https://github.com/ohemilyy/macOS.git ~/dotfiles
+git clone https://github.com/ohemilyy/neptune.git ~/dotfiles
 cd ~/dotfiles
 ./bootstrap/macos.sh
 ```
@@ -77,7 +93,7 @@ If VS Code is already installed, you can restore only the editor settings,
 extensions, and wallpaper:
 
 ```bash
-git clone https://github.com/ohemilyy/macOS.git ~/dotfiles
+git clone https://github.com/ohemilyy/neptune.git ~/dotfiles
 cd ~/dotfiles
 ./vscode/install.sh
 ```

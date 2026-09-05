@@ -88,8 +88,25 @@ link_config() {
   print "    linked $target"
 }
 
+[[ "$OSTYPE" == "darwin"* ]] || {
+  print -u2 "This script is for macOS only."
+  exit 1
+}
+
 print
-print "  🚀 macOS dev setup"
+print '                 _..._'
+print "             .-'     '-."
+print "          .-'  .-\"\"\"-.  '-."
+print "        .'    /       \\    '."
+print '       /     |  ~ ~ ~  |     \\'
+print "      |       \\       /       |"
+print "       \\       '.___.'       /"
+print "        '.                 .'"
+print "          '-.           .-'"
+print "             '---------'"
+print '              N E P T U N E'
+print
+print "  🚀 Neptune setup"
 print "  A cozy shell and a pick-your-own DevOps toolbox."
 print
 print "  Nothing will sign in to cloud accounts or copy credentials automatically."
