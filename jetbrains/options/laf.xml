@@ -1,0 +1,5 @@
+<application>
+  <component name="LafManager">
+    <laf themeId="com.junkfactory.tokyodark" />
+  </component>
+</application>

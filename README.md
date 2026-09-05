@@ -41,6 +41,7 @@ scratch.
 - AWS, Azure, PowerShell, Go, Rust, Java, Python via `uv`, and Node via `fnm`
 - Handy networking, security, and database tools
 - VS Code settings, a big extension pack, Catppuccin styling, and a custom wallpaper
+- IntelliJ IDEA plugins, the Tokyo Dark theme, a random editor wallpaper, and Discord rich presence
 
 Nothing here automatically applies infrastructure, deletes clusters, force
 pushes branches, or does other exciting career-limiting things.
@@ -102,6 +103,27 @@ The custom background extension may ask for administrator access the first time
 it patches VS Code. After installation, run **Developer: Reload Window** from
 the Command Palette if the wallpaper does not appear right away.
 
+## Just want the IntelliJ plugins?
+
+If IntelliJ IDEA is already installed, you can restore the plugins, theme,
+editor background, and Discord rich presence settings. Both JetBrains Toolbox
+installs and the Homebrew cask are found automatically:
+
+```bash
+git clone https://github.com/ohemilyy/neptune.git ~/dotfiles
+cd ~/dotfiles
+./jetbrains/install.sh
+```
+
+The editor background is picked at random from the eight wallpapers in
+`jetbrains/backgrounds/`. Run the script again for a different one, drop your own
+images in that folder, or point `JETBRAINS_WALLPAPER_DIR` at a folder of your
+own—it is searched recursively.
+
+Quit IntelliJ IDEA before running this—the IDE rewrites its settings when it
+exits. Plugins that ship bundled with IDEA, or that are not available for your
+edition, are skipped with a note.
+
 ## A couple of personal bits you still need to add
 
 Secrets and machine-specific data do not belong in this repo. You will still
@@ -125,6 +147,7 @@ For example:
 bootstrap/   the main macOS setup script
 git/         safe Git defaults (no personal identity)
 ghostty/     terminal theme and key bindings
+jetbrains/   IntelliJ IDEA plugins, theme, wallpapers, and installer
 shell/       small .zshrc and .zprofile entry points
 ssh/         non-secret macOS SSH client defaults
 starship/    prompt configuration

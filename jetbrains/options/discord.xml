@@ -1,0 +1,38 @@
+<application>
+  <component name="DiscordApplicationSettings">
+    <option name="show" value="true" />
+    <option name="idle" value="IDLE" />
+    <option name="applicationDetails" value="CUSTOM" />
+    <option name="applicationDetailsCustom" value="🔍 Opening a project..." />
+    <option name="applicationStateCustom" value="" />
+    <option name="applicationIconLargeCustom" value="" />
+    <option name="applicationIconLargeTextCustom" value="" />
+    <option name="applicationIconSmallCustom" value="" />
+    <option name="applicationIconSmallTextCustom" value="" />
+    <option name="applicationTime" value="APPLICATION" />
+    <option name="projectDetails" value="CUSTOM" />
+    <option name="projectDetailsCustom" value="📂 ${ProjectName}" />
+    <option name="projectState" value="CUSTOM" />
+    <option name="projectStateCustom" value="%if($NotNull{VcsBranch}){🌿 on ${VcsBranch}}" />
+    <option name="projectIconLargeCustom" value="" />
+    <option name="projectIconLargeTextCustom" value="" />
+    <option name="projectIconSmallCustom" value="" />
+    <option name="projectIconSmallTextCustom" value="" />
+    <option name="projectTime" value="APPLICATION" />
+    <option name="fileDetails" value="CUSTOM" />
+    <option name="fileDetailsCustom" value="📂 ${ProjectName}%if($NotNull{VcsBranch}){, on ${VcsBranch}}" />
+    <option name="fileState" value="CUSTOM" />
+    <option name="fileStateCustom" value="📝 ${FileNameUnique}%if($IsTextEditor){, line: $CaretLine}" />
+    <option name="fileIconLargeCustom" value="" />
+    <option name="fileIconLargeTextCustom" value="" />
+    <option name="fileIconSmallCustom" value="" />
+    <option name="fileIconSmallTextCustom" value="" />
+    <option name="fileTime" value="APPLICATION" />
+    <option name="filePrefixEnabled" value="false" />
+    <option name="fileHideVcsIgnored" value="false" />
+    <option name="applicationType" value="IDE" />
+    <option name="applicationTheme" value="macos" />
+    <option name="iconsTheme" value="catppuccin_mocha" />
+    <option name="applicationLastUpdateNotification" value="" />
+  </component>
+</application>

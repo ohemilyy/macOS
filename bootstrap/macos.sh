@@ -138,6 +138,7 @@ want_azure=false
 want_network=false
 want_databases=false
 want_vscode=false
+want_jetbrains=false
 
 ask "Install Docker and Colima?" y && want_containers=true
 ask "Install Kubernetes tools (kubectl, Helm, k9s, kind, and friends)?" y && want_kubernetes=true
@@ -148,6 +149,7 @@ ask "Install Azure CLI and PowerShell?" n && want_azure=true
 ask "Install networking and security tools?" n && want_network=true
 ask "Install database clients?" n && want_databases=true
 ask "Install the customized VS Code profile and extensions?" y && want_vscode=true
+ask "Install IntelliJ IDEA and its plugins?" n && want_jetbrains=true
 
 if $want_containers; then
   say "Installing container tools"
@@ -224,6 +226,12 @@ if $want_vscode; then
   "$repo_dir/vscode/install.sh"
 fi
 
+if $want_jetbrains; then
+  say "Installing IntelliJ IDEA and its plugins"
+  install_casks intellij-idea
+  "$repo_dir/jetbrains/install.sh"
+fi
+
 if [[ "$mode" == interactive ]]; then
   say "Personalizing Git"
 
@@ -274,4 +282,8 @@ fi
 
 if $want_vscode; then
   print "  Reload VS Code once to activate the theme and background."
+fi
+
+if $want_jetbrains; then
+  print "  Restart IntelliJ IDEA once to load the new plugins."
 fi

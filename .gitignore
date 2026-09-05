@@ -55,6 +55,19 @@
 !/vscode/install.sh
 !/vscode/catppuccin-aurora.png
 
+!/jetbrains/
+/jetbrains/*
+!/jetbrains/plugins.txt
+!/jetbrains/install.sh
+!/jetbrains/backgrounds/
+/jetbrains/backgrounds/*
+!/jetbrains/backgrounds/*.jpg
+!/jetbrains/options/
+/jetbrains/options/*
+!/jetbrains/options/laf.xml
+!/jetbrains/options/colors.scheme.xml
+!/jetbrains/options/discord.xml
+
 # Git defaults only. Personal identity belongs in ~/.gitconfig.local.
 !/git/
 /git/*
